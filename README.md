@@ -1,6 +1,6 @@
-# flutter_sizer
+# responsive_sizer
 
-Flutter_sizer helps implement a reponsive layout. Inspired by ![sizer](https://github.com/TechnoUrmish/Sizer)
+Responsive_sizer helps implement a reponsive layout. Inspired by ![sizer](https://github.com/TechnoUrmish/Sizer)
 
 ![Alt Text](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
 
@@ -12,7 +12,7 @@ Add to pubspec.yaml.
 ```
 dependencies:
   ...
-  flutter_sizer: ^1.0.0
+  responsive_sizer: ^1.0.0
 ```
 
 ## Parameters ⚙️ 
@@ -20,26 +20,26 @@ dependencies:
 * `.h` - (double) for widget height
 * `.w` - (double) for widget width
 * `.sp` - (double) for font size
-* `SizerUtil.orientation` - for screen orientation portrait or landscape
-* `SizerUtil.deviceType` - for device type mobile or tablet
+* `Device.orientation` - for screen orientation portrait or landscape
+* `Device.deviceType` - for device type mobile or tablet
 
 ## How to use 💻
 
 Add the following imports to your Dart code: 
 ```
-import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
 
-* First need to Initialize SizerUtil.init() method inside main.dart.
+* First need to Initialize Device.setScreenSize() method inside main.dart.
 * In main.dart must have to use LayoutBuilder and OrientationBuilder. 
 * See below explain for more details.
 
 
 ```
 import 'package:flutter/material.dart';
-import 'login_screen.dart'; 
-import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+import 'home.dart'; 
 
 void main() {
   runApp(MyApp());
@@ -48,17 +48,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(                           //return LayoutBuilder
+    return LayoutBuilder(
       builder: (context, constraints) {
-        return OrientationBuilder(                  //return OrientationBuilder
+        return OrientationBuilder(
           builder: (context, orientation) {
-            //initialize SizerUtil()
-            SizerUtil().init(constraints, orientation);  //initialize SizerUtil
+            //initialize responsive_sizer
+            Device.setScreenSize(constraints, orientation);
             return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'Sizer',
+              title: 'Reponsive_Sizer',
               theme: ThemeData.light(),
-              home: LoginScreen(),
+              home: Home(),
             );
           },
         );
@@ -70,9 +69,9 @@ class MyApp extends StatelessWidget {
 
 You can use it like this: 
 
-You need to import flutter_sizer package in order to access number.h or number.w
+You need to import responsive_sizer package in order to access number.h or number.w
 ```
-import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
 **Widget Size** 🕓
@@ -95,7 +94,7 @@ import 'package:flutter_sizer/flutter_sizer.dart';
 If you want to support both portrait and landscape orientations
 ```
 appBar() {
-    return SizerUtil.orientation == Orientation.portrait
+    return Device.orientation == Orientation.portrait
         ? Container(
             width: 100.0.w,
             height: 20.0.h,
@@ -109,27 +108,27 @@ appBar() {
 
 **DeviceType** 📱
 
-If you want the same layout to look different in tablet and mobile then use ``SizerUtil.getDeviceType`` method
+If you want the same layout to look different in tablet and mobile then use ``Device.screenType`` method
 ```
-SizerUtil.getDeviceType
+Device.screenType
 ```
 
 You can use it like this:
 ```
  appBar() {
-    return SizerUtil.deviceType == DeviceScreenType.Tablet
+    return Device.screenType == ScreenType.tablet
         ? Container(
-            width: 100.0.w,
-            height: 20.0.h,
-          )                     //for Tablet
+            width: 100.w,
+            height: 20.5.h,
+          )                     // Widget for Tablet
         : Container(
-            width: 100.0.w,
-            height: 12.0.h,
-          );                    //for Mobile
+            width: 100.w,
+            height: 12.5.h,
+          );                    // Widget for Mobile
   }
 ```
 
 ## Community Support
 
-If you have any suggestions or issues, feel free to open an [issue](https://github.com/CoderUni/flutter_sizer/issues)
-If you would like to contribute, feel free to create a [PR](https://github.com/CoderUni/flutter_sizer/pulls)# responsive_sizer
+If you have any suggestions or issues, feel free to open an [issue](https://github.com/CoderUni/responsive_sizer/issues)
+If you would like to contribute, feel free to create a [PR](https://github.com/CoderUni/responsive_sizer/pulls)# responsive_sizer
