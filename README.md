@@ -2,79 +2,43 @@
 
 Responsive_sizer helps implement a reponsive layout. Inspired by ![sizer](https://github.com/TechnoUrmish/Sizer)
 
-![Alt Text](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
+![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
 
-![Alt Text](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_without_lib.png)
+![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_without_lib.png)
 
 
-## Installation ⬇️
-Add to pubspec.yaml.
+## Installation
+Add responsive_sizer to pubspec.yaml
 ```
 dependencies:
   ...
   responsive_sizer: ^1.0.0
 ```
 
-## Parameters ⚙️ 
+## Parameters
 
-* `.h` - (double) for widget height
-* `.w` - (double) for widget width
-* `.sp` - (double) for font size
-* `Device.orientation` - for screen orientation portrait or landscape
-* `Device.deviceType` - for device type mobile or tablet
+* `.h` - Returns a calculated height depending on the device
+* `.w` - Returns a calculated width depending on the device
+* `.sp` - Returns a calculated sp depending on the device
+* `Device.boxConstraints` - Returns the Device's BoxConstraints
+* `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
+* `Device.screenType` - Returns the Screen Type (mobile or tablet)
 
-## How to use 💻
+## Usage
 
-Add the following imports to your Dart code: 
+Import the Package: 
 ```
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
-
-* First need to Initialize Device.setScreenSize() method inside main.dart.
-* In main.dart must have to use LayoutBuilder and OrientationBuilder. 
-* See below explain for more details.
-
-
+Wrap MaterialApp with ResponsiveSizer widget:
 ```
-import 'package:flutter/material.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
-import 'home.dart'; 
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            //initialize responsive_sizer
-            Device.setScreenSize(constraints, orientation);
-            return MaterialApp(
-              title: 'Reponsive_Sizer',
-              theme: ThemeData.light(),
-              home: Home(),
-            );
-          },
-        );
-      },
-    );
-  }
-}
+ResponsiveSizer(
+  child: MaterialApp()
+)
 ```
 
-You can use it like this: 
-
-You need to import responsive_sizer package in order to access number.h or number.w
-```
-import 'package:responsive_sizer/responsive_sizer.dart';
-```
-
-**Widget Size** 🕓
+**Widget Size**
 ```
     Container(
       width: 20.w,    // This will take 20% of the screen's width
@@ -82,28 +46,26 @@ import 'package:responsive_sizer/responsive_sizer.dart';
     )
 ```
 
-**Font size** 🆎
+**Font size**
 ```
     Text(
       'Sizer', style: TextStyle(fontSize: 15.sp),
     );
 ```
 
-**Orientation** 🔄
+**Orientation**
 
 If you want to support both portrait and landscape orientations
 ```
-appBar() {
-    return Device.orientation == Orientation.portrait
-        ? Container(
-            width: 100.0.w,
-            height: 20.0.h,
-          )                     //for portrait screen
-        : Container(
-            width: 100.0.w,
-            height: 12.0.h,
-          );                    //for landscape screen
-  }
+Device.orientation == Orientation.portrait
+  ? Container(   // Widget for Portrait
+      width: 100.w,
+      height: 20.5.h,
+   )
+  : Container(   // Widget for Landscape
+      width: 100.w,
+      height: 12.5.h,
+   )
 ```
 
 **DeviceType** 📱
@@ -115,20 +77,30 @@ Device.screenType
 
 You can use it like this:
 ```
- appBar() {
-    return Device.screenType == ScreenType.tablet
-        ? Container(
-            width: 100.w,
-            height: 20.5.h,
-          )                     // Widget for Tablet
-        : Container(
-            width: 100.w,
-            height: 12.5.h,
-          );                    // Widget for Mobile
-  }
+Device.screenType == ScreenType.tablet
+  ? Container(   // Widget for Tablet
+      width: 100.w,
+      height: 20.5.h,
+   )
+  : Container(   // Widget for Mobile
+      width: 100.w,
+      height: 12.5.h,
+   )
+```
+
+## Take Note
+
+**You need to import `responsive_sizer` package in order to access number.h or number.w**
+
+**Auto import in VSCode and Android Studio doesn't work for dart extensions.** Eg: Typing 10.h would not bring up auto import suggestion for this package
+
+One workaround is to type `Device` so that the auto import suggestion for this package would show up:
+```
+import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
 ## Community Support
 
 If you have any suggestions or issues, feel free to open an [issue](https://github.com/CoderUni/responsive_sizer/issues)
-If you would like to contribute, feel free to create a [PR](https://github.com/CoderUni/responsive_sizer/pulls)# responsive_sizer
+
+If you would like to contribute, feel free to create a [PR](https://github.com/CoderUni/responsive_sizer/pulls)
