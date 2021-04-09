@@ -40,17 +40,18 @@ ResponsiveSizer(
 
 **Widget Size**
 ```
-    Container(
-      width: 20.w,    // This will take 20% of the screen's width
-      height: 30.5.h     // This will take 30.5% of the screen's height
-    )
+Container(
+  width: 20.w,    // This will take 20% of the screen's width
+  height: 30.5.h     // This will take 30.5% of the screen's height
+)
 ```
 
 **Font size**
 ```
-    Text(
-      'Sizer', style: TextStyle(fontSize: 15.sp),
-    );
+Text(
+  'Responsive Sizer', 
+  style: TextStyle(fontSize: 15.sp),
+)
 ```
 
 **Orientation**
