@@ -2,7 +2,7 @@ name: responsive_sizer_example
 description: An example app that shows how to use the responsive_sizer package.
 
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

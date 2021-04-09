@@ -11,7 +11,7 @@ Responsive Sizer helps implement a reponsive layout by providing helper widgets 
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^1.0.0
+  responsive_sizer: ^1.0.0+3
 ```
 
 ## Parameters
