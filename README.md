@@ -1,6 +1,6 @@
 # Responsive Sizer
 
-Responsive Sizer helps implement a reponsive layout by providing helper widgets and extensions.
+Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions.
 
 ![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
 
@@ -11,7 +11,7 @@ Responsive Sizer helps implement a reponsive layout by providing helper widgets 
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^1.0.0+3
+  responsive_sizer: ^1.0.0+4
 ```
 
 ## Parameters

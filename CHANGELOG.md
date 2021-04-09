@@ -1,3 +1,7 @@
+## [1.0.0+4] - 09.04.2021.
+
+* Fixed Typo
+
 ## [1.0.0+3] - 09.04.2021.
 
 * Formatted dart files according to pass static analysis
