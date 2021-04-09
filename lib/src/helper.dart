@@ -1,6 +1,7 @@
 part of responsive_sizer;
 
 /// Type of Screen
+///
 /// This can be either mobile or tablet
 enum ScreenType { mobile, tablet }
 
@@ -12,6 +13,7 @@ class Device {
   static late Orientation orientation;
 
   /// Type of Device
+  ///
   /// This can either be mobile or tablet
   static late ScreenType screenType;
 

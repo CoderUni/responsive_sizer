@@ -1,7 +1,7 @@
 name: responsive_sizer
-description: Responsive_sizer helps implement a reponsive layout
-version: 1.0.0
-homepage: https://github.com/CoderUni/flutter_sizer/tree/main
+description: Responsive_sizer helps implement a reponsive layout by providing helper widgets and extensions.
+version: 1.0.0+1
+homepage: https://github.com/CoderUni/responsive_sizer/
 
 
 environment:
