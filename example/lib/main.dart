@@ -27,13 +27,13 @@ class Home extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          height: 12.5.h,
-          width: 50.w,
+          height: Adaptive.h(12.5), // or 12.5.h
+          width: 50.w, // or Adaptive.w(50)
           color: Colors.black,
         ),
         Text(
           "This text is responsive",
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: 12.sp), // or Adaptive.sp(12)
         ),
         Device.orientation == Orientation.portrait
             ? Text("My Orientation is Portrait")

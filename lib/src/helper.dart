@@ -27,6 +27,7 @@ class Device {
   /// BoxConstraints, Height, and Width
   static void setScreenSize(
       BoxConstraints boxConstraints, Orientation orientation) {
+    // Sets screen width and height
     if (orientation == Orientation.portrait) {
       width = boxConstraints.maxWidth;
       height = boxConstraints.maxHeight;
@@ -34,8 +35,32 @@ class Device {
       width = boxConstraints.maxHeight;
       height = boxConstraints.maxWidth;
     }
+
+    // Sets boxconstraints and orientation
     boxConstraints = boxConstraints;
     orientation = orientation;
-    screenType = width < 600 ? ScreenType.mobile : ScreenType.tablet;
+
+    // Sets ScreenType
+    if ((orientation == Orientation.portrait && width < 600) ||
+        (orientation == Orientation.landscape && height < 600)) {
+      screenType = ScreenType.mobile;
+    } else {
+      screenType = ScreenType.tablet;
+    }
   }
+}
+
+class Adaptive {
+  /// Calculates the height depending on the device's screen size
+  ///
+  /// Eg: 20.h -> will take 20% of the screen's height
+  static double h(num height) => height.h;
+
+  /// Calculates the width depending on the device's screen size
+  ///
+  /// Eg: 20.h -> will take 20% of the screen's width
+  static double w(num width) => width.w;
+
+  /// Calculates the sp (Scalable Pixel) depending on the device's screen size
+  static double sp(num scalablePixel) => scalablePixel.sp;
 }

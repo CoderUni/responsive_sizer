@@ -1,3 +1,8 @@
+## [1.1.0] - 10.04.2021.
+
+* Added Adaptive class to support auto import package
+* Fixed a bug where changing the orientation changes the ScreenType
+
 ## [1.0.0+4] - 09.04.2021.
 
 * Fixed Typo

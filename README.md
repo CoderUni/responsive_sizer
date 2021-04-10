@@ -6,16 +6,25 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 
 ![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_without_lib.png)
 
+# Content
 
-## Installation
+- [Installation](#Installation)
+- [Parameters](#Parameters)
+- [Take Note](#Take-Note)
+- [Community Support](#Community-Support)
+
+# Installation
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^1.0.0+4
+  responsive_sizer: ^1.1.0
 ```
 
-## Parameters
+# Parameters
 
+* `Adaptive.h()` - Returns a calculated height based on the device
+* `Adaptive.w()` - Returns a calculated width based on the device
+* `Adaptive.sp()` - Returns a calculated sp based on the device
 * `.h` - Returns a calculated height based on the device
 * `.w` - Returns a calculated width based on the device
 * `.sp` - Returns a calculated sp based on the device
@@ -23,29 +32,29 @@ dependencies:
 * `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
 * `Device.screenType` - Returns the Screen Type (mobile or tablet)
 
-## Usage
+# Usage
 
-### Import the Package: 
+## Import the Package: 
 ```dart
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
-### Wrap MaterialApp with ResponsiveSizer widget:
+## Wrap MaterialApp with ResponsiveSizer widget:
 ```dart
 ResponsiveSizer(
   child: MaterialApp()
 )
 ```
 
-### Widget Size
+## Widget Size
 ```dart
 Container(
-  width: 20.w,    // This will take 20% of the screen's width
+  width: Adaptive.w(20),    // This will take 20% of the screen's width
   height: 30.5.h     // This will take 30.5% of the screen's height
 )
 ```
 
-### Font size
+## Font size
 ```dart
 Text(
   'Responsive Sizer', 
@@ -53,7 +62,7 @@ Text(
 )
 ```
 
-### Orientation
+## Orientation
 
 If you want to support both portrait and landscape orientations
 ```dart
@@ -68,7 +77,7 @@ Device.orientation == Orientation.portrait
    )
 ```
 
-### DeviceType
+## DeviceType
 
 If you want the same layout to look different in tablet and mobile, use the ``Device.screenType`` method:
 
@@ -84,7 +93,7 @@ Device.screenType == ScreenType.tablet
    )
 ```
 
-## Take Note
+# Take Note
 
 You need to import `responsive_sizer` package in order to access `number.h`, `number.w`, and `number.sp`
 
@@ -95,7 +104,7 @@ One workaround is to type `Device` so that the auto import suggestion would show
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
-## Community Support
+# Community Support
 
 If you have any suggestions or issues, feel free to open an [issue](https://github.com/CoderUni/responsive_sizer/issues)
 
