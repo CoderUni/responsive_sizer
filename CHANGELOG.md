@@ -1,3 +1,7 @@
+## [1.1.0+1] - 12.04.2021.
+
+* Fixed broken README links
+
 ## [1.1.0] - 10.04.2021.
 
 * Added Adaptive class to support auto import package

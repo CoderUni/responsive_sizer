@@ -10,14 +10,14 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 
 - [Installation](#Installation)
 - [Parameters](#Parameters)
-- [Take Note](#Take-Note)
-- [Community Support](#Community-Support)
+- [Take Note](#take-note)
+- [Community Support](#community-support)
 
 # Installation
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^1.1.0
+  responsive_sizer: ^1.1.0+1
 ```
 
 # Parameters
