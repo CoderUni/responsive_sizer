@@ -26,7 +26,11 @@ class Device {
   /// Sets the Screen's size and Device's Orientation,
   /// BoxConstraints, Height, and Width
   static void setScreenSize(
-      BoxConstraints boxConstraints, Orientation orientation) {
+      BoxConstraints constraints, Orientation currentOrientation) {
+    // Sets boxconstraints and orientation
+    boxConstraints = constraints;
+    orientation = currentOrientation;
+
     // Sets screen width and height
     if (orientation == Orientation.portrait) {
       width = boxConstraints.maxWidth;
@@ -35,10 +39,6 @@ class Device {
       width = boxConstraints.maxHeight;
       height = boxConstraints.maxWidth;
     }
-
-    // Sets boxconstraints and orientation
-    boxConstraints = boxConstraints;
-    orientation = orientation;
 
     // Sets ScreenType
     if ((orientation == Orientation.portrait && width < 600) ||

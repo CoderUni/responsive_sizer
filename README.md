@@ -17,7 +17,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^1.1.0+1
+  responsive_sizer: ^2.0.0
 ```
 
 # Parameters
@@ -41,9 +41,11 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 ## Wrap MaterialApp with ResponsiveSizer widget:
 ```dart
-ResponsiveSizer(
-  child: MaterialApp()
-)
+ ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return MaterialApp();
+      }
+ )
 ```
 
 ## Widget Size

@@ -1,3 +1,8 @@
+## [2.0.0] - 14.04.2021
+
+* ResponsiveSizer now accepts builder parameter to fix [Issue#1](https://github.com/CoderUni/responsive_sizer/issues/1)
+* Fixed bug where `Orientation` and `ScreenType` doesn't get set by `Device.setScreenSize`
+
 ## [1.1.0+1] - 12.04.2021.
 
 * Fixed broken README links
