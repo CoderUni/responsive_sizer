@@ -1,3 +1,7 @@
+## [2.0.0+1] - 15.04.2021
+
+* Improved formatting in documentation
+
 ## [2.0.0] - 14.04.2021
 
 * ResponsiveSizer now accepts builder parameter to fix [Issue#1](https://github.com/CoderUni/responsive_sizer/issues/1)

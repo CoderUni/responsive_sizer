@@ -1,6 +1,6 @@
 # Responsive Sizer
 
-Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions.
+Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions
 
 ![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
 
@@ -17,7 +17,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```dart
 dependencies:
-  responsive_sizer: ^2.0.0
+  responsive_sizer: ^2.0.0+1
 ```
 
 # Parameters
@@ -34,12 +34,12 @@ dependencies:
 
 # Usage
 
-## Import the Package: 
+## Import the Package
 ```dart
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
-## Wrap MaterialApp with ResponsiveSizer widget:
+## Wrap MaterialApp with ResponsiveSizer widget
 ```dart
  ResponsiveSizer(
       builder: (context, orientation, screenType) {
@@ -99,7 +99,7 @@ Device.screenType == ScreenType.tablet
 
 You need to import `responsive_sizer` package in order to access `number.h`, `number.w`, and `number.sp`
 
-**Auto import in VSCode and Android Studio doesn't work for dart extensions.** Typing 10.h would not bring up auto import suggestion for this package
+**Auto import in VSCode and Android Studio doesn't work for dart extension methods.** Typing `10.h` would not bring up auto import suggestion for this package
 
 One workaround is to type `Device` so that the auto import suggestion would show up:
 ```dart
