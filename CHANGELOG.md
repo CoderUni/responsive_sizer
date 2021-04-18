@@ -1,3 +1,8 @@
+## [2.0.0+2] - 18.04.2021
+
+* Changed description
+* Improved formatting in documentation
+
 ## [2.0.0+1] - 15.04.2021
 
 * Improved formatting in documentation
