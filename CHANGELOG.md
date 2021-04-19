@@ -1,3 +1,8 @@
+## [2.0.1] - 19.04.2021
+
+* Fixes [Issue#2](https://github.com/CoderUni/responsive_sizer/issues/2) where the correct width and height aren't set when in landscape orientation
+* Added `adaptiveHeight` and `adaptiveWidth` parameter that is used for calculation to replace the old width and height
+
 ## [2.0.0+2] - 18.04.2021
 
 * Changed description

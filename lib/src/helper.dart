@@ -23,6 +23,12 @@ class Device {
   /// Device's Width
   static late double width;
 
+  /// Height used when calculating the adaptive height in `Adaptive.h`
+  static late double adaptiveHeight;
+
+  /// Width used when calculating the adaptive width in `Adaptive.w`
+  static late double adaptiveWidth;
+
   /// Sets the Screen's size and Device's Orientation,
   /// BoxConstraints, Height, and Width
   static void setScreenSize(
@@ -32,12 +38,16 @@ class Device {
     orientation = currentOrientation;
 
     // Sets screen width and height
+    width = boxConstraints.maxWidth;
+    height = boxConstraints.maxHeight;
+
+    // Sets adaptive width and height used for `Adaptive.h` caclculation
     if (orientation == Orientation.portrait) {
-      width = boxConstraints.maxWidth;
-      height = boxConstraints.maxHeight;
+      adaptiveWidth = boxConstraints.maxWidth;
+      adaptiveHeight = boxConstraints.maxHeight;
     } else {
-      width = boxConstraints.maxHeight;
-      height = boxConstraints.maxWidth;
+      adaptiveWidth = boxConstraints.maxHeight;
+      adaptiveHeight = boxConstraints.maxWidth;
     }
 
     // Sets ScreenType

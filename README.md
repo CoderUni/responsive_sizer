@@ -17,7 +17,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^2.0.0+2
+  responsive_sizer: ^2.0.1
 ```
 
 # Parameters
