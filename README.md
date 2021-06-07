@@ -34,7 +34,6 @@ dependencies:
 * `.sp` - Returns a calculated sp based on the device
 * `Device.boxConstraints` - Returns the Device's BoxConstraints
 * `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
-* `Device.deviceType` - Returns the Device Type (android, ios, web, etc.)
 * `Device.screenType` - Returns the Screen Type (mobile or tablet)
 
 # Usage
@@ -84,14 +83,6 @@ Device.orientation == Orientation.portrait
    )
 ```
 
-## DeviceType
-
-If you want the check the device type, use the ``Device.deviceType`` method:
-
-```dart
-if(Device.deviceType == DeviceType.android)
-   Text("I'm using an android device")
-```
 
 ## ScreenType
 
