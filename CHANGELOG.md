@@ -1,3 +1,11 @@
+## [3.0.3] - 08.06.2021
+
+* Added a way to check device platform without getting compatibility issue
+
+## [3.0.2] - 08.06.2021
+
+* Removed checks for device type because of dart 2 incompatibility issue
+
 ## [3.0.1] - 08.06.2021
 
 * Fixed Web compatibility error due to dart:io
