@@ -1,3 +1,7 @@
+## [3.0.1] - 08.06.2021
+
+* Fixed Web compatibility error due to dart:io
+
 ## [3.0.0] - 08.06.2021
 
 * **Breaking Change:** The package will set the correct width and height regardless of the orientation [See Issue#6](https://github.com/CoderUni/responsive_sizer/issues/6)

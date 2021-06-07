@@ -52,20 +52,29 @@ class Device {
     height = boxConstraints.maxHeight;
 
     // Sets DeviceType
-    if (Platform.isAndroid) {
-      deviceType = DeviceType.android;
-    } else if (Platform.isIOS) {
-      deviceType = DeviceType.ios;
-    } else if (kIsWeb) {
+    if (kIsWeb) {
       deviceType = DeviceType.web;
-    } else if (Platform.isWindows) {
-      deviceType = DeviceType.windows;
-    } else if (Platform.isMacOS) {
-      deviceType = DeviceType.mac;
-    } else if (Platform.isLinux) {
-      deviceType = DeviceType.linux;
-    } else if (Platform.isFuchsia) {
-      deviceType = DeviceType.fuschia;
+    } else {
+      switch (defaultTargetPlatform) {
+        case TargetPlatform.android:
+          deviceType = DeviceType.android;
+          break;
+        case TargetPlatform.iOS:
+          deviceType = DeviceType.ios;
+          break;
+        case TargetPlatform.windows:
+          deviceType = DeviceType.windows;
+          break;
+        case TargetPlatform.macOS:
+          deviceType = DeviceType.mac;
+          break;
+        case TargetPlatform.linux:
+          deviceType = DeviceType.linux;
+          break;
+        case TargetPlatform.fuchsia:
+          deviceType = DeviceType.fuschia;
+          break;
+      }
     }
 
     // Sets ScreenType
