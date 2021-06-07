@@ -1,8 +1,13 @@
 part of responsive_sizer;
 
+/// Type of Device
+///
+/// This can be android, ios, fuschia, web, or desktop (windows, mac, linux)
+enum DeviceType { android, ios, fuschia, web, windows, mac, linux }
+
 /// Type of Screen
 ///
-/// This can be either mobile or tablet
+/// This can either be mobile or tablet
 enum ScreenType { mobile, tablet }
 
 class Device {
@@ -13,8 +18,9 @@ class Device {
   static late Orientation orientation;
 
   /// Type of Device
-  ///
-  /// This can either be mobile or tablet
+  static late DeviceType deviceType;
+
+  /// Type of Screen
   static late ScreenType screenType;
 
   /// Device's Height
@@ -23,14 +29,18 @@ class Device {
   /// Device's Width
   static late double width;
 
-  /// Height used when calculating the adaptive height in `Adaptive.h`
-  static late double adaptiveHeight;
+  /// Devices' Pixel Ratio
+  static double get pixelRatio {
+    return WidgetsBinding.instance?.window.devicePixelRatio ?? 1;
+  }
 
-  /// Width used when calculating the adaptive width in `Adaptive.w`
-  static late double adaptiveWidth;
+  /// Device's Pixel Density
+  static double get pixelDensity {
+    return pixelRatio * (width > height ? width / height : height / width);
+  }
 
-  /// Sets the Screen's size and Device's Orientation,
-  /// BoxConstraints, Height, and Width
+  /// Sets the Screen's size and Device's `Orientation`,
+  /// `BoxConstraints`, `Height`, and `Width`
   static void setScreenSize(
       BoxConstraints constraints, Orientation currentOrientation) {
     // Sets boxconstraints and orientation
@@ -41,13 +51,21 @@ class Device {
     width = boxConstraints.maxWidth;
     height = boxConstraints.maxHeight;
 
-    // Sets adaptive width and height used for `Adaptive.h` caclculation
-    if (orientation == Orientation.portrait) {
-      adaptiveWidth = boxConstraints.maxWidth;
-      adaptiveHeight = boxConstraints.maxHeight;
-    } else {
-      adaptiveWidth = boxConstraints.maxHeight;
-      adaptiveHeight = boxConstraints.maxWidth;
+    // Sets DeviceType
+    if (Platform.isAndroid) {
+      deviceType = DeviceType.android;
+    } else if (Platform.isIOS) {
+      deviceType = DeviceType.ios;
+    } else if (kIsWeb) {
+      deviceType = DeviceType.web;
+    } else if (Platform.isWindows) {
+      deviceType = DeviceType.windows;
+    } else if (Platform.isMacOS) {
+      deviceType = DeviceType.mac;
+    } else if (Platform.isLinux) {
+      deviceType = DeviceType.linux;
+    } else if (Platform.isFuchsia) {
+      deviceType = DeviceType.fuschia;
     }
 
     // Sets ScreenType

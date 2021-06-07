@@ -25,6 +25,32 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    late final String _deviceType;
+
+    switch (Device.deviceType) {
+      case DeviceType.android:
+        _deviceType = 'android';
+        break;
+      case DeviceType.ios:
+        _deviceType = 'ios';
+        break;
+      case DeviceType.fuschia:
+        _deviceType = 'fuschia';
+        break;
+      case DeviceType.web:
+        _deviceType = 'web';
+        break;
+      case DeviceType.windows:
+        _deviceType = 'windows';
+        break;
+      case DeviceType.mac:
+        _deviceType = 'mac';
+        break;
+      case DeviceType.linux:
+        _deviceType = 'linux';
+        break;
+    }
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,7 +69,8 @@ class Home extends StatelessWidget {
               : Text("My Orientation is Landscape"),
           Device.screenType == ScreenType.tablet
               ? Text("My Screen's Type is a Tablet")
-              : Text("My Screen's Type is a Phone")
+              : Text("My Screen's Type is a Phone"),
+          Text("I'm using a/an $_deviceType device"),
         ],
       ),
     );

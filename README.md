@@ -17,8 +17,12 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^2.0.1
+  responsive_sizer: ^3.0.0
 ```
+
+# Breaking Changes
+* The package will now use the current width and height regardless of the orientation instead of only using the width and height of portrait mode [See Issue#6](https://github.com/CoderUni/responsive_sizer/issues/6)
+* Changed `.sp` to calculate the value using device's pixel density ratio instead of calculating the value based on the device's width
 
 # Parameters
 
@@ -30,6 +34,7 @@ dependencies:
 * `.sp` - Returns a calculated sp based on the device
 * `Device.boxConstraints` - Returns the Device's BoxConstraints
 * `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
+* `Device.deviceType` - Returns the Device Type (android, ios, web, etc.)
 * `Device.screenType` - Returns the Screen Type (mobile or tablet)
 
 # Usage
@@ -80,6 +85,15 @@ Device.orientation == Orientation.portrait
 ```
 
 ## DeviceType
+
+If you want the check the device type, use the ``Device.deviceType`` method:
+
+```dart
+if(Device.deviceType == DeviceType.android)
+   Text("I'm using an android device")
+```
+
+## ScreenType
 
 If you want the same layout to look different in tablet and mobile, use the ``Device.screenType`` method:
 

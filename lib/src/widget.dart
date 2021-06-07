@@ -1,7 +1,7 @@
 part of responsive_sizer;
 
 /// Provides `Context`, `Orientation`, and `ScreenType` parameters to the builder function
-typedef ResponsiveBuild = Widget Function(
+typedef ResponsiveBuilderType = Widget Function(
   BuildContext,
   Orientation,
   ScreenType,
@@ -14,7 +14,7 @@ class ResponsiveSizer extends StatelessWidget {
   const ResponsiveSizer({Key? key, required this.builder}) : super(key: key);
 
   /// Builds the widget whenever the orientation changes
-  final ResponsiveBuild builder;
+  final ResponsiveBuilderType builder;
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,9 @@
+## [3.0.0] - 08.06.2021
+
+* **Breaking Change:** The package will set the correct width and height regardless of the orientation [See Issue#6](https://github.com/CoderUni/responsive_sizer/issues/6)
+* **Breaking Change:** Changed `.sp` to calculate the value using device's pixel density ratio
+* Added a way to check the device type (Android, Ios, Web, Windows, etc.)
+
 ## [2.0.1] - 19.04.2021
 
 * Fixes [Issue#2](https://github.com/CoderUni/responsive_sizer/issues/2) where the correct width and height aren't set when in landscape orientation
