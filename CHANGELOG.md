@@ -1,4 +1,8 @@
-## [3.0.1] - 08.06.2021
+## [3.0.2] - 08.06.2021
+
+* Removed checks for device type because there is no way to do so without breaking compatibility
+
+## [3.0.2] - 08.06.2021
 
 * Fixed Web compatibility error due to dart:io
 
