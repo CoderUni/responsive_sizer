@@ -1,5 +1,10 @@
 part of responsive_sizer;
 
+/// Type of Device
+///
+/// This can be android, ios, fuschia, web, or desktop (windows, mac, linux)
+enum DeviceType { android, ios, fuschia, web, windows, mac, linux }
+
 /// Type of Screen
 ///
 /// This can either be mobile or tablet
@@ -11,6 +16,9 @@ class Device {
 
   /// Device's Orientation
   static late Orientation orientation;
+
+  /// Type of Device
+  static late DeviceType deviceType;
 
   /// Type of Screen
   static late ScreenType screenType;
@@ -42,6 +50,32 @@ class Device {
     // Sets screen width and height
     width = boxConstraints.maxWidth;
     height = boxConstraints.maxHeight;
+
+    // Sets DeviceType
+    if (kIsWeb) {
+      deviceType = DeviceType.web;
+    } else {
+      switch (defaultTargetPlatform) {
+        case TargetPlatform.android:
+          deviceType = DeviceType.android;
+          break;
+        case TargetPlatform.iOS:
+          deviceType = DeviceType.ios;
+          break;
+        case TargetPlatform.windows:
+          deviceType = DeviceType.windows;
+          break;
+        case TargetPlatform.macOS:
+          deviceType = DeviceType.mac;
+          break;
+        case TargetPlatform.linux:
+          deviceType = DeviceType.linux;
+          break;
+        case TargetPlatform.fuchsia:
+          deviceType = DeviceType.fuschia;
+          break;
+      }
+    }
 
     // Sets ScreenType
     if ((orientation == Orientation.portrait && width < 600) ||
