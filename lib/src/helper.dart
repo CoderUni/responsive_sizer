@@ -29,14 +29,14 @@ class Device {
   /// Device's Width
   static late double width;
 
+  /// Device's Aspect Ratio
+  static double get aspectRatio {
+    return WidgetsBinding.instance?.window.physicalSize.aspectRatio ?? 1;
+  }
+
   /// Devices' Pixel Ratio
   static double get pixelRatio {
     return WidgetsBinding.instance?.window.devicePixelRatio ?? 1;
-  }
-
-  /// Device's Pixel Density
-  static double get pixelDensity {
-    return pixelRatio * (width > height ? width / height : height / width);
   }
 
   /// Sets the Screen's size and Device's `Orientation`,

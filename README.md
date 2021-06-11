@@ -17,7 +17,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^3.0.3
+  responsive_sizer: ^3.0.4
 ```
 
 # Breaking Changes
@@ -26,15 +26,17 @@ dependencies:
 
 # Parameters
 
-* `Adaptive.h()` - Returns a calculated height based on the device
-* `Adaptive.w()` - Returns a calculated width based on the device
-* `Adaptive.sp()` - Returns a calculated sp based on the device
-* `.h` - Returns a calculated height based on the device
-* `.w` - Returns a calculated width based on the device
-* `.sp` - Returns a calculated sp based on the device
+* `Adaptive.h()` - Returns a calculated height based on the device (Does the same thing as .h)
+* `Adaptive.w()` - Returns a calculated width based on the device (Does the same thing as .w)
+* `Adaptive.sp()` - Returns a calculated sp based on the device (Does the same thing as .sp)
+* `.h` - Returns a calculated height based on the device (Does the same thing as Adaptive.h)
+* `.w` - Returns a calculated width based on the device (Does the same thing as Adaptive.w)
+* `.sp` - Returns a calculated sp based on the device (Does the same thing as Adaptive.sp)
 * `Device.boxConstraints` - Returns the Device's BoxConstraints
 * `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
 * `Device.screenType` - Returns the Screen Type (mobile or tablet)
+* `Device.aspectRatio` - Returns the Device's aspect ratio
+* `Device.pixelRatio` - Returns the Device's pixel ratio
 
 # Usage
 

@@ -1,3 +1,7 @@
+## [3.0.4] - 10.06.2021
+
+* Changed implementation of .sp
+
 ## [3.0.3] - 08.06.2021
 
 * Added a way to check device platform without getting compatibility issue
