@@ -1,3 +1,7 @@
+## [3.0.4+1] - 10.06.2021
+
+* Fixed formatting
+
 ## [3.0.4] - 10.06.2021
 
 * Changed implementation of .sp
