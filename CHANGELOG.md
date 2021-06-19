@@ -1,3 +1,7 @@
+## [3.0.4+2] - 19.06.2021
+
+* Improved documentation
+
 ## [3.0.4+1] - 10.06.2021
 
 * Fixed formatting

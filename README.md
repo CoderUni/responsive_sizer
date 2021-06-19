@@ -1,14 +1,18 @@
 # Responsive Sizer
 
-Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions
+Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions. Responsive_sizer has a lot of improvements over the unmaintained sizer package:
 
-![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_with_lib.png)
+- Sizer's maintainer copy-pasted the entire code of this package from ^2.0.1 and didn't maintain the package ever since :(
+- Ever since ^2.0.1, responsive_sizer has many improvements that includes the current [breaking changes](#breaking-changes)
 
-![Responsive Image](https://github.com/TechnoUrmish/Sizer/blob/master/example/images/img_ss_without_lib.png)
+![Responsive Image](https://github.com/CoderUni/responsive_sizer/blob/master/assets/img_ss_with_lib.png)
+
+![Responsive Image](https://github.com/CoderUni/responsive_sizer/blob/master/assets/img_ss_without_lib.png)
 
 # Content
 
 - [Installation](#Installation)
+- [Breaking Changes](#breaking-changes)
 - [Parameters](#Parameters)
 - [Take Note](#take-note)
 - [Community Support](#community-support)
@@ -17,7 +21,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: 3.0.4+1
+  responsive_sizer: 3.0.4+2
 ```
 
 # Breaking Changes
