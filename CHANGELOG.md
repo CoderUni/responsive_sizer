@@ -1,3 +1,7 @@
+## [3.0.4+4] - 19.06.2021
+
+* Added a better explanation of `.h` and `.w` in the example
+
 ## [3.0.4+3] - 19.06.2021
 
 * Improved documentation
