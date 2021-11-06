@@ -8,9 +8,9 @@ enum DeviceType { android, ios, fuchsia, web, windows, mac, linux }
 /// Type of Screen
 ///
 /// This can either be mobile or tablet
-enum ScreenType { watch, mobile, tablet, desktop }
+enum SizerScreenType { watch, mobile, tablet, desktop }
 
-class Device {
+class SizerDevice {
   /// Device's BoxConstraints
   static late BoxConstraints boxConstraints;
 
@@ -21,7 +21,7 @@ class Device {
   static late DeviceType deviceType;
 
   /// Type of Screen
-  static late ScreenType screenType;
+  static late SizerScreenType screenType;
 
   /// Device's Height
   static late double height;
@@ -29,10 +29,10 @@ class Device {
   /// Device's Width
   static late double width;
 
-  static late Map<ScreenType, double> screenTypeSizeMap = {
-    ScreenType.watch: 300,
-    ScreenType.mobile: 600,
-    ScreenType.tablet: 950,
+  static late Map<SizerScreenType, double> screenTypeSizeMap = {
+    SizerScreenType.watch: 300,
+    SizerScreenType.mobile: 600,
+    SizerScreenType.tablet: 950,
   };
 
   /// Device's Aspect Ratio
@@ -46,7 +46,7 @@ class Device {
   }
 
   ///set screenTypeSizeMap
-  static void setScreenTypeSize(Map<ScreenType, double> sizeMap) {
+  static void setScreenTypeSize(Map<SizerScreenType, double> sizeMap) {
     screenTypeSizeMap = sizeMap;
   }
 
@@ -88,20 +88,20 @@ class Device {
     }
 
     // Sets ScreenType
-    var watchSize = screenTypeSizeMap[ScreenType.watch] ?? 300;
-    var mobileSize = screenTypeSizeMap[ScreenType.mobile] ?? 600;
-    var tabletSize = screenTypeSizeMap[ScreenType.tablet] ?? 950;
+    var watchSize = screenTypeSizeMap[SizerScreenType.watch] ?? 300;
+    var mobileSize = screenTypeSizeMap[SizerScreenType.mobile] ?? 600;
+    var tabletSize = screenTypeSizeMap[SizerScreenType.tablet] ?? 950;
     if ((orientation == Orientation.portrait && width < watchSize)
         || (orientation == Orientation.landscape && height < watchSize)) {
-      screenType = ScreenType.watch;
+      screenType = SizerScreenType.watch;
     } else if ((orientation == Orientation.portrait && width < mobileSize)
         || (orientation == Orientation.landscape && height < mobileSize)) {
-      screenType = ScreenType.mobile;
+      screenType = SizerScreenType.mobile;
     } else if ((orientation == Orientation.portrait && width < tabletSize)
         || (orientation == Orientation.landscape && height < tabletSize)) {
-      screenType = ScreenType.tablet;
+      screenType = SizerScreenType.tablet;
     } else {
-      screenType = ScreenType.desktop;
+      screenType = SizerScreenType.desktop;
     }
   }
 }

@@ -4,7 +4,7 @@ part of responsive_sizer;
 typedef ResponsiveBuilderType = Widget Function(
   BuildContext,
   Orientation,
-  ScreenType,
+  SizerScreenType,
 );
 
 /// A widget that gets the device's details like orientation and constraints
@@ -20,8 +20,8 @@ class ResponsiveSizer extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
-        Device.setScreenSize(constraints, orientation);
-        return builder(context, orientation, Device.screenType);
+        SizerDevice.setScreenSize(constraints, orientation);
+        return builder(context, orientation, SizerDevice.screenType);
       });
     });
   }

@@ -42,10 +42,10 @@ class Home extends StatelessWidget {
             "w=${100.w} h=${100.h}",
             style: TextStyle(fontSize: 12.sp),
           ),
-          Device.orientation == Orientation.portrait
+          SizerDevice.orientation == Orientation.portrait
               ? Text("My Orientation is Portrait")
               : Text("My Orientation is Landscape"),
-          Device.screenType == ScreenType.tablet
+          SizerDevice.screenType == SizerScreenType.tablet
               ? Text("My Screen's Type is a Tablet")
               : Text("My Screen's Type is a Phone"),
         ],
