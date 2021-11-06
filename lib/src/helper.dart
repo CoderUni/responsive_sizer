@@ -97,7 +97,7 @@ class Device {
     } else if ((orientation == Orientation.portrait && width < mobileSize)
         || (orientation == Orientation.landscape && height < mobileSize)) {
       screenType = ScreenType.mobile;
-    }else if ((orientation == Orientation.portrait && width < tabletSize)
+    } else if ((orientation == Orientation.portrait && width < tabletSize)
         || (orientation == Orientation.landscape && height < tabletSize)) {
       screenType = ScreenType.tablet;
     } else {
