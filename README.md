@@ -56,6 +56,9 @@ MaterialApp(
    builder: (context, orientation, screenType) {
      return const HomePage();
    },
+   // This is the maximum width of a mobile device 
+   // before it gets categorized as a tablet
+   // maxMobileWidth: 599, (Optional)
  ),
 );
 ```

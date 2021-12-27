@@ -76,14 +76,14 @@ class Device {
           deviceType = DeviceType.linux;
           break;
         case TargetPlatform.fuchsia:
-          deviceType = DeviceType.fuschia;
+          deviceType = DeviceType.fuchsia;
           break;
       }
     }
 
     // Sets ScreenType
-    if ((orientation == Orientation.portrait && width < maxMobileWidth) ||
-        (orientation == Orientation.landscape && height < maxMobileWidth)) {
+    if ((orientation == Orientation.portrait && width <= maxMobileWidth) ||
+        (orientation == Orientation.landscape && height <= maxMobileWidth)) {
       screenType = ScreenType.mobile;
     } else {
       screenType = ScreenType.tablet;

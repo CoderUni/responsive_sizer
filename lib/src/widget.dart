@@ -14,7 +14,7 @@ class ResponsiveSizer extends StatelessWidget {
   const ResponsiveSizer({
     Key? key,
     required this.builder,
-    this.maxMobileWidth = 600,
+    this.maxMobileWidth = 599,
   }) : super(key: key);
 
   /// Builds the widget whenever the orientation changes
