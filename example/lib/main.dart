@@ -8,16 +8,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveSizer(
-      builder: (context, orientation, screenType) {
-        return MaterialApp(
-          title: 'Responsive Sizer Example',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: Home(),
-        );
-      },
+    return MaterialApp(
+      title: 'Responsive Sizer Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ResponsiveSizer(
+        builder: (context, orientation, screenType) {
+          return Home();
+        },
+      ),
     );
   }
 }
