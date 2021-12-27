@@ -2,8 +2,8 @@ part of responsive_sizer;
 
 /// Type of Device
 ///
-/// This can be android, ios, fuschia, web, or desktop (windows, mac, linux)
-enum DeviceType { android, ios, fuschia, web, windows, mac, linux }
+/// This can be android, ios, fuchsia, web, or desktop (windows, mac, linux)
+enum DeviceType { android, ios, fuchsia, web, windows, mac, linux }
 
 /// Type of Screen
 ///
