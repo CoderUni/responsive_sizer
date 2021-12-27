@@ -2,8 +2,8 @@ part of responsive_sizer;
 
 /// Type of Device
 ///
-/// This can be android, ios, fuschia, web, or desktop (windows, mac, linux)
-enum DeviceType { android, ios, fuschia, web, windows, mac, linux }
+/// This can be android, ios, fuchsia, web, or desktop (windows, mac, linux)
+enum DeviceType { android, ios, fuchsia, web, windows, mac, linux }
 
 /// Type of Screen
 ///
@@ -30,19 +30,19 @@ class Device {
   static late double width;
 
   /// Device's Aspect Ratio
-  static double get aspectRatio {
-    return WidgetsBinding.instance?.window.physicalSize.aspectRatio ?? 1;
-  }
+  static late double aspectRatio;
 
-  /// Devices' Pixel Ratio
-  static double get pixelRatio {
-    return WidgetsBinding.instance?.window.devicePixelRatio ?? 1;
-  }
+  /// Device's Pixel Ratio
+  static late double pixelRatio;
 
   /// Sets the Screen's size and Device's `Orientation`,
   /// `BoxConstraints`, `Height`, and `Width`
   static void setScreenSize(
-      BoxConstraints constraints, Orientation currentOrientation) {
+    BuildContext context,
+    BoxConstraints constraints,
+    Orientation currentOrientation,
+    double maxMobileWidth,
+  ) {
     // Sets boxconstraints and orientation
     boxConstraints = constraints;
     orientation = currentOrientation;
@@ -50,6 +50,10 @@ class Device {
     // Sets screen width and height
     width = boxConstraints.maxWidth;
     height = boxConstraints.maxHeight;
+
+    // Sets aspect and pixel ratio
+    aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
+    pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     // Sets DeviceType
     if (kIsWeb) {
@@ -78,8 +82,8 @@ class Device {
     }
 
     // Sets ScreenType
-    if ((orientation == Orientation.portrait && width < 600) ||
-        (orientation == Orientation.landscape && height < 600)) {
+    if ((orientation == Orientation.portrait && width < maxMobileWidth) ||
+        (orientation == Orientation.landscape && height < maxMobileWidth)) {
       screenType = ScreenType.mobile;
     } else {
       screenType = ScreenType.tablet;
