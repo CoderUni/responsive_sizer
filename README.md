@@ -1,9 +1,6 @@
 # Responsive Sizer
 
-Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions. Responsive_sizer has a lot of improvements over the unmaintained sizer package:
-
-- Sizer's maintainer copy-pasted the entire code of this package from ^2.0.1 and didn't maintain the package ever since :(
-- Ever since ^2.0.1, responsive_sizer has many improvements that includes the current [breaking changes](#breaking-changes)
+Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions. Responsive_sizer was built because the sizer package isn't being maintained. At the time of this writing, the sizer package is a complete copy paste of the `^2.0.1` version of this package.
 
 ![Responsive Image](https://github.com/CoderUni/responsive_sizer/blob/main/assets/img_ss_with_lib.png)
 
@@ -11,36 +8,22 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 
 # Content
 
-- [Installation](#Installation)
 - [Breaking Changes](#breaking-changes)
+- [Installation](#Installation)
+- [Usage](#Usage)
 - [Parameters](#Parameters)
 - [Take Note](#take-note)
 - [Community Support](#community-support)
+
+# Breaking Changes
+* ResponsiveSizer should now wrap MaterialApp's child to work
 
 # Installation
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^3.0.5
+  responsive_sizer: ^3.0.5+1
 ```
-
-# Breaking Changes
-* The package will now use the current width and height regardless of the orientation instead of only using the width and height of portrait mode [See Issue#6](https://github.com/CoderUni/responsive_sizer/issues/6)
-* Changed `.sp` to calculate the value using device's pixel density ratio instead of calculating the value based on the device's width
-
-# Parameters
-
-* `Adaptive.h()` - Returns a calculated height based on the device (Does the same thing as .h)
-* `Adaptive.w()` - Returns a calculated width based on the device (Does the same thing as .w)
-* `Adaptive.sp()` - Returns a calculated sp based on the device (Does the same thing as .sp)
-* `.h` - Returns a calculated height based on the device (Does the same thing as Adaptive.h)
-* `.w` - Returns a calculated width based on the device (Does the same thing as Adaptive.w)
-* `.sp` - Returns a calculated sp based on the device (Does the same thing as Adaptive.sp)
-* `Device.boxConstraints` - Returns the Device's BoxConstraints
-* `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
-* `Device.screenType` - Returns the Screen Type (mobile or tablet)
-* `Device.aspectRatio` - Returns the Device's aspect ratio
-* `Device.pixelRatio` - Returns the Device's pixel ratio
 
 # Usage
 
@@ -56,9 +39,6 @@ MaterialApp(
    builder: (context, orientation, screenType) {
      return const HomePage();
    },
-   // This is the maximum width of a mobile device 
-   // before it gets categorized as a tablet
-   // maxMobileWidth: 599, (Optional)
  ),
 );
 ```
@@ -110,6 +90,20 @@ Device.screenType == ScreenType.tablet
       height: 12.5.h,
    )
 ```
+# Parameters
+## ResponsiveSizer
+* `maxMobileWidth` - Maximum width of a mobile device
+(If the device's width is larger than this, it will be categorized as a tablet) - Default value: 599
+
+## Extensions
+* `Adaptive.h()` or `.h` - Returns a calculated height based on the device
+* `Adaptive.w()` or `.w`- Returns a calculated width based on the device
+* `Adaptive.sp()` or `.sp`- Returns a calculated sp based on the device
+* `Device.boxConstraints` - Returns the Device's BoxConstraints
+* `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
+* `Device.screenType` - Returns the Screen Type (mobile or tablet)
+* `Device.aspectRatio` - Returns the Device's aspect ratio
+* `Device.pixelRatio` - Returns the Device's pixel ratio
 
 # Take Note
 

@@ -1,6 +1,11 @@
+## [3.0.5+1] - 27.12.2021
+
+* Improved README
+
 ## [3.0.5] - 27.12.2021
 
 * Fixed bugs where the app will not render in release mode
+
 ## [3.0.4+4] - 19.06.2021
 
 * Added a better explanation of `.h` and `.w` in the example
