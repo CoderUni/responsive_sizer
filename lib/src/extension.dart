@@ -1,7 +1,6 @@
 part of responsive_sizer;
 
 extension DeviceExt on num {
-
   //  *****************  Absolute length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 
@@ -21,11 +20,10 @@ extension DeviceExt on num {
   double get pc => this * 16;
 
   /// Calculates the height in points (1/72th of 1 inch)
-  double get pt => this * inches/72;
+  double get pt => this * inches / 72;
 
   /// Calculates the height in pixels (default)
   double get px => this.toDouble();
-
 
   //  *****************  Relative length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
@@ -56,11 +54,10 @@ extension DeviceExt on num {
   /// Calculates the sp (Scalable Pixel) depending on the device's pixel density
   double get sp =>
       this *
-          (((h + w) + (Device.pixelRatio * Device.aspectRatio)) / 2.08) /
-          100;
+      (((h + w) + (Device.pixelRatio * Device.aspectRatio)) / 2.08) /
+      100;
 
   /// Calculates the material dp (Pixel Density)
   /// (https://material.io/design/layout/pixel-density.html#pixel-density-on-android))
-  double get dp =>
-      this * (w * 160) / Device.pixelRatio;
+  double get dp => this * (w * 160) / Device.pixelRatio;
 }
