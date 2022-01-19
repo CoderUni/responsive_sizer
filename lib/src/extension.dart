@@ -2,27 +2,45 @@ part of responsive_sizer;
 
 extension DeviceExt on num {
 
+  //  *****************  Absolute length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
-  // Absolute length units
 
+  /// Calculates the height in centimeters
   double get cm => this * 37.8;
+
+  /// Calculates the height millimeters
   double get mm => this * 3.78;
+
+  /// Calculates the height in quarter-millimeters
   double get Q => this * 0.945;
+
+  /// Calculates the height in inches
   double get inches => this * 96;
+
+  /// Calculates the height in picas (1/6th of 1 inch)
   double get pc => this * 16;
+
+  /// Calculates the height in points (1/72th of 1 inch)
   double get pt => this * inches/72;
+
+  /// Calculates the height in pixels (default)
   double get px => this.toDouble();
 
 
+  //  *****************  Relative length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
-  // Relative length units
 
+  // TODO Recursive units need to be implemented
   /*double get em => ;
   double get ex => ;
   double get ch => ;
   double get rem => ;
   double get lh => ;*/
+
+  /// Percentage of the viewport's smaller dimension.
   double get vmin => this * min(Device.height, Device.width) / 100;
+
+  /// Percentage of the viewport's larger dimension.
   double get vmax => this * max(Device.height, Device.width) / 100;
 
   /// Calculates the height depending on the device's screen size
