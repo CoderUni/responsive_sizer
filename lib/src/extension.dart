@@ -4,25 +4,25 @@ extension DeviceExt on num {
   //  *****************  Absolute length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 
-  /// Calculates the height in centimeters
+  /// The respective value in centimeters
   double get cm => this * 37.8;
 
-  /// Calculates the height millimeters
+  /// The respective value millimeters
   double get mm => this * 3.78;
 
-  /// Calculates the height in quarter-millimeters
+  /// The respective value in quarter-millimeters
   double get Q => this * 0.945;
 
-  /// Calculates the height in inches
+  /// The respective value in inches
   double get inches => this * 96;
 
-  /// Calculates the height in picas (1/6th of 1 inch)
+  /// The respective value in picas (1/6th of 1 inch)
   double get pc => this * 16;
 
-  /// Calculates the height in points (1/72th of 1 inch)
+  /// The respective value in points (1/72th of 1 inch)
   double get pt => this * inches / 72;
 
-  /// Calculates the height in pixels (default)
+  /// The respective value in pixels (default)
   double get px => this.toDouble();
 
   //  *****************  Relative length units *****************************************
@@ -35,10 +35,10 @@ extension DeviceExt on num {
   double get rem => ;
   double get lh => ;*/
 
-  /// Percentage of the viewport's smaller dimension.
+  /// Respective percentage of the viewport's smaller dimension.
   double get vmin => this * min(Device.height, Device.width) / 100;
 
-  /// Percentage of the viewport's larger dimension.
+  /// Respective percentage of the viewport's larger dimension.
   double get vmax => this * max(Device.height, Device.width) / 100;
 
   /// Calculates the height depending on the device's screen size
