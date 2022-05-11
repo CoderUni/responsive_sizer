@@ -53,7 +53,7 @@ class Device {
 
     // Sets aspect and pixel ratio
     aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
-    pixelRatio = MediaQuery.of(context).devicePixelRatio;
+    pixelRatio = WidgetsBinding.instance!.window.devicePixelRatio;
 
     // Sets DeviceType
     if (kIsWeb) {

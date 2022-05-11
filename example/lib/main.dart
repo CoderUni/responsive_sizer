@@ -8,16 +8,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Responsive Sizer Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ResponsiveSizer(
-        builder: (context, orientation, screenType) {
-          return Home();
-        },
-      ),
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return MaterialApp(
+          title: 'Responsive Sizer Example',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: Home(),
+        );
+      },
     );
   }
 }
@@ -43,11 +43,11 @@ class Home extends StatelessWidget {
             style: TextStyle(fontSize: 12.sp),
           ),
           Device.orientation == Orientation.portrait
-              ? Text("My Orientation is Portrait")
-              : Text("My Orientation is Landscape"),
+              ? Text("My orientation is Portrait")
+              : Text("My orientation is Landscape"),
           Device.screenType == ScreenType.tablet
-              ? Text("My Screen's Type is a Tablet")
-              : Text("My Screen's Type is a Phone"),
+              ? Text("My screen's type is a Tablet")
+              : Text("My screen's type is a Phone"),
         ],
       ),
     );
