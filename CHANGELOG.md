@@ -1,3 +1,7 @@
+## [3.0.6+1] - 11.05.2022
+
+* Fixed formatting
+
 ## [3.0.6] - 11.05.2022
 
 * **Important Change:** ResponsiveSizer doesn't need to be inside MaterialApp anymore

@@ -51,7 +51,7 @@ extension DeviceExt on num {
   /// Eg: 20.h -> will take 20% of the screen's width
   double get w => this * Device.width / 100;
 
-  /// Calculates the sp (Scalable Pixel) depending on the device's pixel 
+  /// Calculates the sp (Scalable Pixel) depending on the device's pixel
   /// density and aspect ratio
   double get sp =>
       this *
