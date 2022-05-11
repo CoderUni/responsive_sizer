@@ -1,3 +1,8 @@
+## [3.0.6] - 19.01.2022
+
+* Added absolute units: cm, mm, Q, inches, pc, pt, px
+* Added relative units: vmin, vmax 
+
 ## [3.0.5+1] - 27.12.2021
 
 * Improved README

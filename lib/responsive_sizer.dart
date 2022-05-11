@@ -1,5 +1,7 @@
 library responsive_sizer;
 
+import 'dart:math';
+
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/widgets.dart';
 
