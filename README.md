@@ -1,6 +1,6 @@
 # Responsive Sizer
 
-Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions. Responsive_sizer was built because the sizer package isn't being maintained. At the time of this writing, the sizer package is a complete copy paste of the `^2.0.1` version of this package.
+Responsive Sizer helps implement a responsive layout by providing helper widgets and extensions.
 
 ![Responsive Image](https://github.com/CoderUni/responsive_sizer/blob/main/assets/img_ss_with_lib.png)
 
@@ -8,21 +8,18 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 
 # Content
 
-- [Breaking Changes](#breaking-changes)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Parameters](#Parameters)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Parameters](#parameters)
 - [Take Note](#take-note)
+- [FAQ](#faq)
 - [Community Support](#community-support)
-
-# Breaking Changes
-* ResponsiveSizer should now wrap MaterialApp's child to work
 
 # Installation
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^3.0.5+1
+  responsive_sizer: ^3.0.6
 ```
 
 # Usage
@@ -32,14 +29,14 @@ dependencies:
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
 
-## Wrap MaterialApp's child with ResponsiveSizer widget
+## Wrap MaterialApp with ResponsiveSizer widget
 ```dart
-MaterialApp(
- home: ResponsiveSizer(
-   builder: (context, orientation, screenType) {
-     return const HomePage();
-   },
- ),
+ResponsiveSizer( 
+  builder: (context, orientation, screenType) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  },
 );
 ```
 
@@ -55,7 +52,9 @@ Container(
 ```dart
 Text(
   'Responsive Sizer', 
-  style: TextStyle(fontSize: 15.sp),
+  style: TextStyle(fontSize: 15.dp), 
+  // 15.sp can also be used instead of .dp
+  // To know their differences, check #FAQ
 )
 ```
 
@@ -96,18 +95,33 @@ Device.screenType == ScreenType.tablet
 (If the device's width is larger than this, it will be categorized as a tablet) - Default value: 599
 
 ## Extensions
-* `Adaptive.h()` or `.h` - Returns a calculated height based on the device
-* `Adaptive.w()` or `.w`- Returns a calculated width based on the device
-* `Adaptive.sp()` or `.sp`- Returns a calculated sp based on the device
-* `Device.boxConstraints` - Returns the Device's BoxConstraints
-* `Device.orientation` - Returns the Screen Orientation (portrait or landscape)
-* `Device.screenType` - Returns the Screen Type (mobile or tablet)
-* `Device.aspectRatio` - Returns the Device's aspect ratio
-* `Device.pixelRatio` - Returns the Device's pixel ratio
+* `Adaptive.h()` or `.h` - Calculated percentage of the device's height (40.h -> 40% of device's height)
+* `Adaptive.w()` or `.w` - Calculated percentage of the device's width (40.w -> 40% of device's width)
+* `Adaptive.sp()` or `.sp` - Calculated sp based on the device's pixel density and aspect ratio (See [FAQ](#sp-dp-difference))
+* `Adaptive.dp()` or `.dp` - Calculated dp based on the device's pixel density (See [FAQ](#sp-dp-difference))
+
+<br />
+
+* `Device.boxConstraints` - BoxConstraints of the device
+* `Device.orientation` - Screen Orientation of the device (portrait or landscape)
+* `Device.screenType` - Screen type of the device (mobile or tablet)
+* `Device.aspectRatio` - Aspect ratio of the device
+* `Device.pixelRatio` - Pixel density ratio of the device
+
+<br />
+
+* `Adaptive.cm()` or `.cm` - The respective value in value in centimeters
+* `Adaptive.mm()` or `.mm` - The respective value in value in millimeters
+* `Adaptive.Q()` or `.Q` - The respective value in quarter-millimeters
+* `Adaptive.inches()` or `.inches` - The respective value in inches
+* `Adaptive.pc()` or `.pc` - The respective value in picas (1/6th of 1 inch)
+* `Adaptive.pt()` or `.pt` - The respective value in points (1/72th of 1 inch)
+* `Adaptive.px()` or `.px` - The respective value in pixels
+
 
 # Take Note
 
-You need to import `responsive_sizer` package in order to access `number.h`, `number.w`, and `number.sp`
+You need to import `responsive_sizer` package in order to access `number.h`, `number.w`, `number.dp`, and `number.sp`
 
 **Auto import in VSCode and Android Studio doesn't work for dart extension methods.** Typing `10.h` would not bring up auto import suggestion for this package
 
@@ -115,6 +129,13 @@ One workaround is to type `Device` so that the auto import suggestion would show
 ```dart
 import 'package:responsive_sizer/responsive_sizer.dart';
 ```
+
+# FAQ
+
+### <a id="sp-dp-difference"></a>What is the difference between `.sp` and `.dp`?
+
+`.dp` is calculated based on Material Design's [dp calculation](https://material.io/design/layout/pixel-density.html#pixel-density-on-android) 
+while`.sp` is calculated based on the device's [pixel density and aspect ratio](https://github.com/CoderUni/responsive_sizer/blob/f1558c80bc2c2ca7db3ccbd4b34a30c87f3c5f0e/lib/src/extension.dart#L54)
 
 # Community Support
 

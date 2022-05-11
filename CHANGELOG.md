@@ -1,7 +1,8 @@
-## [3.0.6] - 19.01.2022
+## [3.0.6] - 11.05.2022
 
+* **Important Change:** ResponsiveSizer doesn't need to be inside MaterialApp anymore
 * Added absolute units: cm, mm, Q, inches, pc, pt, px
-* Added relative units: vmin, vmax 
+* Added relative units: vmin, vmax
 
 ## [3.0.5+1] - 27.12.2021
 
