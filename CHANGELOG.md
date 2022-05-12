@@ -1,3 +1,7 @@
+## [3.0.7] - 11.06.2022
+
+* Added devicePixelRatio fallback value
+
 ## [3.0.6+1] - 11.05.2022
 
 * Fixed formatting
