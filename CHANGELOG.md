@@ -1,4 +1,8 @@
-## [3.0.7] - 11.06.2022
+## [3.0.8] - 14.05.2022
+
+* Updated WidgetsBinding to support both Flutter 2 and 3
+
+## [3.0.7] - 11.05.2022
 
 * Added devicePixelRatio fallback value
 

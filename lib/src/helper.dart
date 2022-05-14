@@ -53,7 +53,7 @@ class Device {
 
     // Sets aspect and pixel ratio
     aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
-    pixelRatio = WidgetsBinding.instance?.window.devicePixelRatio ?? 4;
+    pixelRatio = _ambiguate(WidgetsBinding.instance)!.window.devicePixelRatio;
 
     // Sets DeviceType
     if (kIsWeb) {
@@ -89,6 +89,14 @@ class Device {
       screenType = ScreenType.tablet;
     }
   }
+
+  /// This allows a value of type T or T?
+  /// to be treated as a value of type T?.
+  ///
+  /// We use this so that APIs that have become
+  /// non-nullable can still be used with `!` and `?`
+  /// to support older versions of the API as well.
+  static T? _ambiguate<T>(T? value) => value;
 }
 
 class Adaptive {
