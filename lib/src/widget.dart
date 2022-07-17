@@ -30,6 +30,9 @@ class ResponsiveSizer extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
         Device.setScreenSize(context, constraints, orientation, maxMobileWidth);
+        if (constraints.maxWidth == 0 || constraints.maxHeight == 0) {
+          return const SizedBox();
+        }
         return builder(context, orientation, Device.screenType);
       });
     });
