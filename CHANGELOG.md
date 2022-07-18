@@ -1,3 +1,7 @@
+## [3.1.0] - 18.07.2022
+
+* Fixed bug where device width and height is initially zero in release mode 
+
 ## [3.0.8] - 14.05.2022
 
 * Updated WidgetsBinding to support both Flutter 2 and 3
