@@ -8,7 +8,7 @@ enum DeviceType { android, ios, fuchsia, web, windows, mac, linux }
 /// Type of Screen
 ///
 /// This can either be mobile or tablet
-enum ScreenType { mobile, tablet }
+enum ScreenType { mobile, tablet, desktop }
 
 class Device {
   /// Device's BoxConstraints
@@ -41,8 +41,9 @@ class Device {
     BuildContext context,
     BoxConstraints constraints,
     Orientation currentOrientation,
-    double maxMobileWidth,
-  ) {
+    double maxMobileWidth, [
+    double? maxTabletWidth,
+  ]) {
     // Sets boxconstraints and orientation
     boxConstraints = constraints;
     orientation = currentOrientation;
@@ -85,8 +86,12 @@ class Device {
     if ((orientation == Orientation.portrait && width <= maxMobileWidth) ||
         (orientation == Orientation.landscape && height <= maxMobileWidth)) {
       screenType = ScreenType.mobile;
-    } else {
+    } else if (maxTabletWidth == null ||
+        (orientation == Orientation.portrait && width <= maxTabletWidth) ||
+        (orientation == Orientation.landscape && height <= maxTabletWidth)) {
       screenType = ScreenType.tablet;
+    } else {
+      screenType = ScreenType.desktop;
     }
   }
 

@@ -1,3 +1,7 @@
+## [3.1.1] - 14.09.2022
+
+* Added desktop as one of the screen type options
+
 ## [3.1.0] - 18.07.2022
 
 * Fixed bug where device width and height is initially zero in release mode 

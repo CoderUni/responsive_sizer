@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           home: Home(),
         );
       },
+      maxTabletWidth: 900, // Optional
     );
   }
 }
@@ -25,6 +26,22 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    late final String screenTypeText;
+
+    switch (Device.screenType) {
+      case ScreenType.mobile:
+        screenTypeText = "My screen's type is Mobile";
+        break;
+      case ScreenType.tablet:
+        screenTypeText = "My screen's type is Tablet";
+        break;
+      // ScreenType can only be desktop when `maxTabletWidth`
+      // is set in `ResponsiveSizer`
+      case ScreenType.desktop:
+        screenTypeText = "My screen's type is Desktop";
+        break;
+    }
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -45,9 +62,7 @@ class Home extends StatelessWidget {
           Device.orientation == Orientation.portrait
               ? Text("My orientation is Portrait")
               : Text("My orientation is Landscape"),
-          Device.screenType == ScreenType.tablet
-              ? Text("My screen's type is a Tablet")
-              : Text("My screen's type is a Phone"),
+          Text(screenTypeText),
         ],
       ),
     );

@@ -19,7 +19,7 @@ Responsive Sizer helps implement a responsive layout by providing helper widgets
 Add `responsive_sizer` to pubspec.yaml
 ```yaml
 dependencies:
-  responsive_sizer: ^3.1.0
+  responsive_sizer: ^3.1.1
 ```
 
 # Usage
@@ -89,10 +89,14 @@ Device.screenType == ScreenType.tablet
       height: 12.5.h,
    )
 ```
+*`Device.ScreenType` **can not** be *Desktop* unless `maxTabletWidth` is set
+
 # Parameters
 ## ResponsiveSizer
 * `maxMobileWidth` - Maximum width of a mobile device
 (If the device's width is larger than this, it will be categorized as a tablet) - Default value: 599
+* `maxTabletWidth` - Maximum width of a tablet device
+(If the device's width is larger than this, it will be categorized as a desktop) - Optional: enables *Desktop* `ScreenType` if enabled
 
 ## Extensions
 * `Adaptive.h()` or `.h` - Calculated percentage of the device's height (40.h -> 40% of device's height)
