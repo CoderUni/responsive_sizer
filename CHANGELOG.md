@@ -1,3 +1,8 @@
+## [3.2.0] - 22.07.2023
+
+* Removed deprecated method
+* Added `spa` which is `altunyurt's` way of calculating sp
+
 ## [3.1.1] - 14.09.2022
 
 * Added desktop as one of the screen type options
