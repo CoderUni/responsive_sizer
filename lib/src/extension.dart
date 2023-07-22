@@ -61,4 +61,8 @@ extension DeviceExt on num {
   /// Calculates the material dp (Pixel Density)
   /// (https://material.io/design/layout/pixel-density.html#pixel-density-on-android))
   double get dp => this * (w * 160) / Device.pixelRatio;
+
+  /// Calculates the sp (Scalable Pixel) based on Issue #27
+  double get spa =>
+      this * (((h + w) + (240 * Device.aspectRatio)) / 2.08) / 100;
 }
