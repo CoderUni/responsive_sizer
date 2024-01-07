@@ -101,6 +101,8 @@ Device.screenType == ScreenType.tablet
 ## Extensions
 * `Adaptive.h()` or `.h` - Calculated percentage of the device's height (40.h -> 40% of device's height)
 * `Adaptive.w()` or `.w` - Calculated percentage of the device's width (40.w -> 40% of device's width)
+* `Adaptive.sh()` or `.sh` - Calculated percentage of the safe area height (40.sh -> 40% of safe area height)
+* `Adaptive.sw()` or `.sw` - Calculated percentage of the safe area width (40.sw -> 40% of safe area width)
 * `Adaptive.sp()` or `.sp` - Calculated sp based on the device's pixel density and aspect ratio (See [FAQ](#sp-dp-difference))
 * `Adaptive.dp()` or `.dp` - Calculated dp based on the device's pixel density (See [FAQ](#sp-dp-difference))
 

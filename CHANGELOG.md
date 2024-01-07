@@ -1,5 +1,9 @@
 ## [3.2.0] - 22.07.2023
 
+* Added `sh` and `sw` to calculate the height and width depending on the safe area size
+
+## [3.2.0] - 22.07.2023
+
 * Removed deprecated method
 * Added `spa` which is `altunyurt's` way of calculating sp
 

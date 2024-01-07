@@ -48,8 +48,18 @@ extension DeviceExt on num {
 
   /// Calculates the width depending on the device's screen size
   ///
-  /// Eg: 20.h -> will take 20% of the screen's width
+  /// Eg: 20.w -> will take 20% of the screen's width
   double get w => this * Device.width / 100;
+
+  /// Calculates the width depending on the device's safe area size
+  ///
+  /// Eg: 20.sw -> will take 20% of the safe area width
+  double get sw => this * Device.safeAreaWidth / 100;
+
+  /// Calculates the height depending on the device's safe area size
+  ///
+  /// Eg: 20.sh -> will take 20% of the safe area height
+  double get sh => this * Device.safeAreaHeight / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's pixel
   /// density and aspect ratio

@@ -29,6 +29,12 @@ class Device {
   /// Device's Width
   static late double width;
 
+  /// Device's Safe Area Height
+  static late double safeAreaHeight;
+
+  /// Device's Safe Area Width
+  static late double safeAreaWidth;
+
   /// Device's Aspect Ratio
   static late double aspectRatio;
 
@@ -51,6 +57,12 @@ class Device {
     // Sets screen width and height
     width = boxConstraints.maxWidth;
     height = boxConstraints.maxHeight;
+
+    var viewPadding = MediaQuery.of(context).viewPadding;
+    // Sets safe area width and height
+    safeAreaWidth = width - viewPadding.left - viewPadding.right;
+    safeAreaHeight = height - viewPadding.top - viewPadding.bottom;
+
 
     // Sets aspect and pixel ratio
     aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
@@ -104,8 +116,18 @@ class Adaptive {
 
   /// Calculates the width depending on the device's screen size
   ///
-  /// Eg: 20.h -> will take 20% of the screen's width
+  /// Eg: 20.w -> will take 20% of the screen's width
   static double w(num width) => width.w;
+
+  /// Calculates the height depending on the device's screen size
+  ///
+  /// Eg: 20.sh -> will take 20% of the safe area height
+  static double sh(num height) => height.h;
+
+  /// Calculates the width depending on the device's screen size
+  ///
+  /// Eg: 20.sw -> will take 20% of the safe area width
+  static double sw(num width) => width.w;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's pixel
   /// density and aspect ratio
