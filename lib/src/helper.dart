@@ -122,12 +122,12 @@ class Adaptive {
   /// Calculates the height depending on the device's screen size
   ///
   /// Eg: 20.sh -> will take 20% of the safe area height
-  static double sh(num height) => height.h;
+  static double sh(num height) => height.sh;
 
   /// Calculates the width depending on the device's screen size
   ///
   /// Eg: 20.sw -> will take 20% of the safe area width
-  static double sw(num width) => width.w;
+  static double sw(num width) => width.sw;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's pixel
   /// density and aspect ratio
