@@ -1,6 +1,6 @@
-## [3.2.0] - 22.07.2023
+## [3.3.0] - 17.01.2024
 
-* Added `sh` and `sw` to calculate the height and width depending on the safe area size
+* Added `sh` and `sw` extension
 
 ## [3.2.0] - 22.07.2023
 

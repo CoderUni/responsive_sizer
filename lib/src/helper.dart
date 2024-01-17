@@ -29,11 +29,14 @@ class Device {
   /// Device's Width
   static late double width;
 
-  /// Device's Safe Area Height
-  static late double safeAreaHeight;
+  // TODO: Reconsider if we should include AppBar and BottomNavigationBar
+  // in safe height calculation
 
-  /// Device's Safe Area Width
-  static late double safeAreaWidth;
+  /// Device's Remaining Height after applying `SafeArea`
+  static late double safeHeight;
+
+  /// Device's Remaining Width after applying `SafeArea`
+  static late double safeWidth;
 
   /// Device's Aspect Ratio
   static late double aspectRatio;
@@ -58,11 +61,10 @@ class Device {
     width = boxConstraints.maxWidth;
     height = boxConstraints.maxHeight;
 
-    var viewPadding = MediaQuery.of(context).viewPadding;
-    // Sets safe area width and height
-    safeAreaWidth = width - viewPadding.left - viewPadding.right;
-    safeAreaHeight = height - viewPadding.top - viewPadding.bottom;
-
+    // Calculates remaining available size after `SafeArea`
+    final viewPadding = MediaQuery.of(context).viewPadding;
+    safeWidth = width - (viewPadding.left + viewPadding.right);
+    safeHeight = height - (viewPadding.top + viewPadding.bottom);
 
     // Sets aspect and pixel ratio
     aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
