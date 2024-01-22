@@ -1,3 +1,7 @@
+## [3.3.0] - 17.01.2024
+
+* Added `sh` and `sw` extension
+
 ## [3.2.0] - 22.07.2023
 
 * Removed deprecated method
