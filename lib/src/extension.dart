@@ -51,12 +51,12 @@ extension DeviceExt on num {
   /// Eg: 20.w -> will take 20% of the screen's width
   double get w => this * Device.width / 100;
 
-  /// Calculates the height depending on the remaining device height 
+  /// Calculates the height depending on the remaining device height
   /// after using `SafeArea`
   /// Eg: 20.sh -> will take 20% of the safe area height
   double get sh => this * Device.safeHeight / 100;
 
-  /// Calculates the width depending on the remaining device width 
+  /// Calculates the width depending on the remaining device width
   /// after using `SafeArea`
   ///
   /// Eg: 20.sw -> will take 20% of the safe area width
