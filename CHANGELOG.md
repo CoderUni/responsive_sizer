@@ -1,3 +1,7 @@
+## [3.3.1] - 24.03.2024
+
+* Fixed `View` not found bug
+
 ## [3.3.0] - 17.01.2024
 
 * Added `sh` and `sw` extension
