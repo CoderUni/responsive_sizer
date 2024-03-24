@@ -1,4 +1,4 @@
-part of responsive_sizer;
+part of '../responsive_sizer.dart';
 
 /// Type of Device
 ///
@@ -68,7 +68,7 @@ class Device {
 
     // Sets aspect and pixel ratio
     aspectRatio = constraints.constrainDimensions(width, height).aspectRatio;
-    pixelRatio = View.of(context).devicePixelRatio;
+    pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     // Sets DeviceType
     if (kIsWeb) {

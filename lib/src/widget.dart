@@ -1,4 +1,4 @@
-part of responsive_sizer;
+part of '../responsive_sizer.dart';
 
 /// Provides `Context`, `Orientation`, and `ScreenType` parameters to the builder function
 typedef ResponsiveBuilderType = Widget Function(

@@ -1,4 +1,4 @@
-part of responsive_sizer;
+part of '../responsive_sizer.dart';
 
 extension DeviceExt on num {
   //  *****************  Absolute length units *****************************************
